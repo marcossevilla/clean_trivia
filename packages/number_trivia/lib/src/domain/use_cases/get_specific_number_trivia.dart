@@ -1,15 +1,18 @@
 import 'package:dartz/dartz.dart';
-import 'package:meta/meta.dart';
 
-import '../entities.dart';
+import '../entities/errors/failures.dart';
+import '../entities/number_trivia.dart';
+import '../entities/params.dart';
 import '../repositories.dart';
+import '../use_cases/use_case.dart';
 
-class GetSpecificNumberTrivia {
+class GetSpecificNumberTrivia implements UseCase<NumberTrivia, Params> {
   GetSpecificNumberTrivia(this.repository);
 
   final NumberTriviaRepository repository;
 
-  Future<Either<Failure, NumberTrivia>> execute({@required int number}) async {
-    return await repository.getSpecificNumberTrivia(number);
+  @override
+  Future<Either<Failure, NumberTrivia>> call(Params params) async {
+    return await repository.getSpecificNumberTrivia(params.number);
   }
 }
