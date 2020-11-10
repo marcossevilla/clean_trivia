@@ -3,7 +3,7 @@ import 'package:dartz/dartz.dart';
 import '../entities/errors/failures.dart';
 import '../entities/number_trivia.dart';
 import '../entities/params.dart';
-import '../repositories.dart';
+import '../repositories/number_trivia_repository.dart';
 import '../use_cases/use_case.dart';
 
 class GetSpecificNumberTrivia implements UseCase<NumberTrivia, Params> {

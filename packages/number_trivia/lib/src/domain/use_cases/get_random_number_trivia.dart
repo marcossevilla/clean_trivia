@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 
-import '../entities.dart';
+import '../../../number_trivia.dart';
 import '../repositories/number_trivia_repository.dart';
 import 'use_case.dart';
 
