@@ -3,13 +3,13 @@ import 'package:meta/meta.dart';
 
 class NumberTrivia extends Equatable {
   NumberTrivia({
-    @required this.text,
     @required this.number,
+    @required this.text,
   });
 
-  final String text;
   final int number;
+  final String text;
 
   @override
-  List<Object> get props => [text, number];
+  List<Object> get props => [number, text];
 }
