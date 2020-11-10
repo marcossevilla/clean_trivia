@@ -5,7 +5,7 @@ class NumberTrivia extends Equatable {
   NumberTrivia({
     @required this.text,
     @required this.number,
-  }) : super();
+  });
 
   final String text;
   final int number;
