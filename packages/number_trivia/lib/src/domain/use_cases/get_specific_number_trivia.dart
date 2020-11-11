@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 
-import '../entities/errors/failures.dart';
+import 'package:errors/errors.dart';
+
 import '../entities/number_trivia.dart';
 import '../entities/params.dart';
 import '../repositories/number_trivia_repository.dart';

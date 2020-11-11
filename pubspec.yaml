@@ -13,9 +13,8 @@ dependencies:
     sdk: flutter
 
   number_trivia:
-    path: ./packages/number_trivia
+    path: packages/number_trivia
 
-  connectivity: ^2.0.1
   cupertino_icons: ^0.1.3
   flutter_bloc: ^6.1.0
   get_it: ^5.0.1
