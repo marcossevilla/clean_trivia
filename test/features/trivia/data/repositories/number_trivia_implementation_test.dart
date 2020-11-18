@@ -73,10 +73,6 @@ void main() {
     );
 
     runTestsOnline(() {
-      setUp(() {
-        when(mockNetworkInfo.isConnected).thenAnswer((_) async => true);
-      });
-
       test(
         'should return remote data when remote data source call succeeds',
         () async {
@@ -123,10 +119,6 @@ void main() {
     });
 
     runTestsOffline(() {
-      setUp(() {
-        when(mockNetworkInfo.isConnected).thenAnswer((_) async => false);
-      });
-
       test(
         'should return last cached data when there\'s data stored',
         () async {
