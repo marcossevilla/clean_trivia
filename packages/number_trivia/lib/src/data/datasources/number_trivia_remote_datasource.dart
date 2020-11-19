@@ -1,5 +1,9 @@
+import 'dart:convert';
+
 import 'package:http/http.dart' as http;
 import 'package:meta/meta.dart';
+
+import 'package:errors/errors.dart';
 
 import '../models/remote/number_trivia_model.dart';
 
@@ -15,13 +19,25 @@ class NumberTriviaRemoteDataSourceImpl implements NumberTriviaRemoteDataSource {
 
   @override
   Future<NumberTriviaModel> getRandomNumberTrivia() {
-    // TODO: implement getRandomNumberTrivia
-    return null;
+    return _getNumberTriviaFromURL('http://numbersapi.com/random');
   }
 
   @override
   Future<NumberTriviaModel> getSpecificNumberTrivia(int number) {
-    // TODO: implement getSpecificNumberTrivia
-    return null;
+    return _getNumberTriviaFromURL('http://numbersapi.com/$number');
+  }
+
+  Future<NumberTriviaModel> _getNumberTriviaFromURL(String url) async {
+    final response = await client.get(
+      url,
+      headers: {'Content-Type': 'application/json'},
+    );
+
+    if (response.statusCode == 200) {
+      final trivia = NumberTriviaModel.fromJson(json.decode(response.body));
+      return trivia;
+    } else {
+      throw ServerException();
+    }
   }
 }
