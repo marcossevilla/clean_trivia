@@ -113,6 +113,7 @@ void main() {
         expect(result, equals(tNumberTriviaModel));
       },
     );
+
     test(
       'should throw a ServerException when the response code is 404 or other',
       () async {
