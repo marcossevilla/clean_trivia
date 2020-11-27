@@ -2,6 +2,7 @@
 
 import 'package:get_it/get_it.dart';
 import 'package:http/http.dart' as http;
+import 'package:hive_flutter/hive_flutter.dart';
 
 import 'package:network_info/network_info.dart';
 import 'package:number_trivia/number_trivia.dart';
@@ -54,6 +55,7 @@ Future<void> init() async {
   locator.registerLazySingleton(() => InputConverter());
 
   // * External
+  await Hive.initFlutter();
   final prefs = await Hive.openBox(_kPreferencesBox);
 
   locator.registerLazySingleton(() => prefs);
