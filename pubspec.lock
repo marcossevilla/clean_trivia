@@ -297,7 +297,7 @@ packages:
     source: hosted
     version: "0.0.4"
   network_info:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/network_info"
       relative: true
